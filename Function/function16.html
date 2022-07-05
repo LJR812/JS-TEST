@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16.字符串去重</title>
+</head>
+<body>
+    <h1>
+         16. Write a JavaScript function to extract unique characters from a string.
+              Example string : "thequickbrownfoxjumpsoverthelazydog"
+              Expected Output : "thequickbrownfxjmpsvlazydg"
+        
+    </h1>
+    <script>
+        const uniqueStr = (item) => {
+            const arr = item.split('');
+            const uniqueArr = [...new Set(arr)];
+            const uniqueStr = uniqueArr.join('');
+            return uniqueStr
+        }
+        console.log(uniqueStr('thequickbrownfoxjumpsoverthelazydog'))
+    </script>
+</body>
+</html>

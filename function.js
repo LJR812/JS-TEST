@@ -76,7 +76,7 @@ function substrings(str1) {
        }
        var combi = [];
        var temp = "";
-       var slent = Math.pow(2, array1.length);  // 8
+       var slent = Math.pow(2, array1.length); // 8
 
        for (var i = 0; i < slent; i++) {
               temp = "";
@@ -255,33 +255,33 @@ prime(3);
       Note : There are six possible values that typeof returns: object, boolean, function, number, string, and undefined.
  */
 
-       const type = (item) => {
-        console.log(item + '的类型是' + typeof (item));
-       }
+const type = (item) => {
+       console.log(item + '的类型是' + typeof (item));
+}
 
-       type('a');
-       type(123);
-       type({});
-       type(prime);
-       type(undefined);
-       type();
+type('a');
+type(123);
+type({});
+type(prime);
+type(undefined);
+type();
 
 
 /**
  * 10.Write a JavaScript function which returns the n rows by n columns identity matrix.
  */
-       const matrix = (n) => {
-              for (let i = 0; i <= n - 1; i++) {
-                  for (let j = 0; j <= n - 1; j++) {
-                        document.getElementById('whywhy').innerHTML += '*';
-                   }
-              document.getElementById('whywhy').innerHTML += '<br>';
+const matrix = (n) => {
+       for (let i = 0; i <= n - 1; i++) {
+              for (let j = 0; j <= n - 1; j++) {
+                     document.getElementById('whywhy').innerHTML += '*';
               }
+              document.getElementById('whywhy').innerHTML += '<br>';
        }
+}
 
-       window.onload = function () {
+window.onload = function () {
        matrix(5);
-       }
+}
 
 
 
@@ -293,22 +293,22 @@ prime(3);
        Expected Output : 2,4
  */
 
-       const second = (item) => {
-              for (let i = 0; i <= item.length; i++) {
-                     for (let j = 0; j <= item.length; j++) {
-                            let temp;
-                            if (item[j] > item[j + 1]) {
-                                   temp = item[j];
-                                   item[j] = item[j + 1];
-                                   item[j + 1] = temp;
-                            }
+const second = (item) => {
+       for (let i = 0; i <= item.length; i++) {
+              for (let j = 0; j <= item.length; j++) {
+                     let temp;
+                     if (item[j] > item[j + 1]) {
+                            temp = item[j];
+                            item[j] = item[j + 1];
+                            item[j + 1] = temp;
                      }
               }
-              console.log('second lowest number is '+ item[1]);
-              console.log('second greatest number is '+ item[item.length-2]);
        }
+       console.log('second lowest number is ' + item[1]);
+       console.log('second greatest number is ' + item[item.length - 2]);
+}
 
-       second([1,2,3,4,5]);
+second([1, 2, 3, 4, 5]);
 
 
 
@@ -319,23 +319,23 @@ prime(3);
        Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
  */
 
-       const perfectNumber = (num) => {
-              let sum = 0;
-              for(let i = 0; i < num; i++ ){
-                     if(num % i == 0){
-                          sum += i;  
-                     }
-              }
-              const half = (sum + num)/2;
-              if((num === sum) && (half === sum)){
-                     console.log(num+'是完全数！');
-              }else{
-                     console.log(num+'不是完全数！');
+const perfectNumber = (num) => {
+       let sum = 0;
+       for (let i = 0; i < num; i++) {
+              if (num % i == 0) {
+                     sum += i;
               }
        }
+       const half = (sum + num) / 2;
+       if ((num === sum) && (half === sum)) {
+              console.log(num + '是完全数！');
+       } else {
+              console.log(num + '不是完全数！');
+       }
+}
 
-       perfectNumber(28);
-       perfectNumber(228);
+perfectNumber(28);
+perfectNumber(228);
 
 
 
@@ -343,18 +343,18 @@ prime(3);
  * 13.Write a JavaScript function to compute the factors of a positive integer.
  */
 
-       const integer = (num) => {
-              let arr = [];
-              for(let i = 0; i <= num; i++ ){
-                     if(num % i == 0){
-                          arr.push(i);
-                     }
+const integer = (num) => {
+       let arr = [];
+       for (let i = 0; i <= num; i++) {
+              if (num % i == 0) {
+                     arr.push(i);
               }
-             const arrStr = arr.toString();
-              console.log(num+'的正因子是'+arrStr) 
        }
+       const arrStr = arr.toString();
+       console.log(num + '的正因子是' + arrStr)
+}
 
-       integer(6);
+integer(6);
 
 
 
@@ -366,28 +366,35 @@ prime(3);
 
  */
 
-       const amountToCoins = (amount,coins) => {
-
+const amountToCoins = (amount, coins) => {
+       if (amount === 0) {
+              return [];
+       } else {
+              if (amount >= coins[0]) //amount1=46,coins1=25  amount2=21,coin2=10  amount3=11,coin3=10
+              {
+                     left = (amount - coins[0]); //left1=21  left2=11  left3=1
+                     return [coins[0]].concat(amountTocoins(left, coins)); // [25,] [25,10,] [25,10,]
+              } else {
+                     coins.shift(); //[25..]  [10..] [5..]
+                     return amountTocoins(amount, coins);
+              }
        }
+}
+console.log(amountTocoins(46, [25, 10, 5, 2, 1]));
 
-       function amountTocoins(amount, coins) 
-{
- if (amount === 0) 
-  {
-     return [];
-   } 
- else
-   {
-     if (amount >= coins[0])  //amount1=46,coins1=25  amount2=21,coin2=10  amount3=11,coin3=10
-       {
-        left = (amount - coins[0]); //left1=21  left2=11  left3=1
-        return [coins[0]].concat( amountTocoins(left, coins) ); // [25,] [25,10,] [25,10,]
-        } 
-      else
-        {
-         coins.shift();//[25..]  [10..] [5..]
-         return amountTocoins(amount, coins);
-        }
-    }
-} 
-console.log(amountTocoins(46, [25, 10, 5, 2,1]));
+
+
+/**
+ * 15. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases.
+ *  Accept b and n from the user and display the result.
+ */
+
+  const exponentFun = (b,n) => {
+       const result = math.pow(b,n);
+       console.log(result)
+  }
+
+  exponentFun(2,3);
+
+
+

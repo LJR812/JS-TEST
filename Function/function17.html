@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.数组分组</title>
+</head>
+<body>
+    <h1>
+        17.Write a JavaScript program to split values of two given arrays into two groups.
+        If an element in filter is truthy, the corresponding element in the collection belongs to the first group;
+        otherwise, it belongs to the second group.
+    </h1>
+    <script>
+        const splitArr1 = (arr,filter) => 
+            arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);
+            console.log(splitArr([1, 2, 3, 4], [true, true, false, true]))
+    </script>
+</body>
+</html>

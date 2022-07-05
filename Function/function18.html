@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18.从左移除数组指定元素及其左边的元素</title>
+</head>
+<body>
+    <h1>
+       18.Write a JavaScript program to remove specified elements from the left of a given array of elements.
+        
+    </h1>
+    <script>
+        const removeEle = (arr, n = 1)=> {
+             return arr.slice(n); 
+        }
+        console.log(removeEle([1, 2, 3]));
+        console.log(removeEle([1, 2, 3], 1));
+        console.log(removeEle([1, 2, 3], 2));
+        console.log(removeEle([1, 2, 3], 4));
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23</title>
+</head>
+<body>
+    <h1>
+        23.Write a JavaScript function to find the first not repeated character. 
+        Sample arguments : 'abacddbec'
+        Expected output : 'e'
+    </h1>
+    <script>
+    const noRepeat = (str) => {
+       let repeatArr = [];
+       const arr = str.split('');
+       for(let i = 0;i < arr.length; i++){
+        for(let j = i+1; j< arr.length;j++){
+            if(arr[i]==arr[j]){
+                arr.filter(num=>{
+                    return num !== arr[i];
+                })
+ 					}	
+ 				}
+        }
+       }
+
+    console.log(noRepeat('abacddbec'))
+    </script>
+</body>
+</html>

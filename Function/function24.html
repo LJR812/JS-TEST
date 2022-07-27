@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24</title>
+</head>
+
+<body>
+    <h1>
+        24. Write a JavaScript function to apply Bubble Sort algorithm. 
+        Note : According to wikipedia "Bubble sort, sometimes referred to as sinking sort, 
+        is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted,
+        comparing each pair of adjacent items and swapping them if they are in the wrong order".
+        Sample array : [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]
+        Expected output : [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]
+    </h1>
+    <script>
+        const bubbleSort = (arr) => {
+           for(let i = 0;i < arr.length; i++){
+            for(let j = i+1; j < arr.length; j++){
+                let switchVal;
+                if(arr[i]<arr[j]){
+                    switchVal = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = switchVal;
+        				}	
+        			}
+            }
+            return arr;
+           }
+
+        // console.log(noRepeat('abacddbec'))
+        console.log(bubbleSort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]));
+    </script>
+</body>
+
+</html>

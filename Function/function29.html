@@ -1,0 +1,25 @@
+Write a JavaScript program to pass a 'JavaScript function' as parameter.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29</title>
+</head>
+
+<body>
+    <h1>
+        29.Write a JavaScript function to get the function name. 
+    </h1>
+    <script>
+    //箭头函数不能使用arguments、super和new.target，也不能用作构造函数。也没有prototype属性。
+    function abc() {
+    console.log( arguments.callee.name );
+    }
+    abc();
+    </script>
+</body>
+
+</html>

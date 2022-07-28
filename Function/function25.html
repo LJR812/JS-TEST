@@ -17,10 +17,17 @@
     </h1>
     <script>
         const longestCountryName = (arr) => {
-           
+           for(let i = 0; i < arr.length; i++){
+            for(let j = i+1; j < arr.length; j++)
+            if(arr[i].length < arr[j].length){
+                let arrSwitch;
+                arrSwitch = arr[j];
+                arr[i] = arrSwitch;
+                arr[j] = arr[i];
+            }
+            return arr[i]
            }
-
-        // console.log(noRepeat('abacddbec'))
+           }
         console.log(longestCountryName(["Australia", "Germany", "United States of America"]));
     </script>
 </body>

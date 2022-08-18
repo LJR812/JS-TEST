@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+
+<body>
+    <h1>
+        5. Write a JavaScript program to compute the exponent of a number.
+        Note : The exponent of a number says how many times the base number is used as a factor.
+        82 = 8 x 8 = 64. Here 8 is the base and 2 is the exponent.
+    </h1>
+    <script>
+        const exponent = (base,exponent) => {
+            let sum = 1;
+            for(let i = 1; i <= exponent; i++){
+                sum *= base
+            }
+            console.log(sum);
+        }
+
+        exponent(8,2);
+    </script>
+</body>
+
+</html>
